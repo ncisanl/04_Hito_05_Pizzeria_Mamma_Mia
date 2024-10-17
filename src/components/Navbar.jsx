@@ -1,46 +1,50 @@
+import { Link } from "react-router-dom";
+
 export function Navbar() {
   const total = 25000;
+  // TODO: token = true --> Profile / Logout
+  // TODO: token = false --> Login / Register
   const token = false;
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           Pizzería Mamma Mía!
-        </a>
+        </Link>
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/">
                 🍕 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               {token ? (
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/profile">
                   🔓 Profile
-                </a>
+                </Link>
               ) : (
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/login">
                   🔐 Login
-                </a>
+                </Link>
               )}
             </li>
             <li className="nav-item">
               {token ? (
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/logout">
                   🔒 Logout
-                </a>
+                </Link>
               ) : (
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/register">
                   🔐 Register
-                </a>
+                </Link>
               )}
             </li>
           </ul>
         </div>
-        <span className="nav-link total-navbar">
+        <Link className="nav-link total-navbar" to="/cart">
           🛒 Total: ${total.toLocaleString("es-CL")}
-        </span>
+        </Link>
       </div>
     </nav>
   );

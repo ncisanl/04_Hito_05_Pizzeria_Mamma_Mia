@@ -103,3 +103,8 @@ body {
 .card-pizza {
   text-align: -webkit-left;
 }
+
+.section-not-found{
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,4 +1,4 @@
-import { CardPizza } from "./CardPizza";
+import { CardPizza } from "../components/CardPizza.jsx";
 import { pizzas } from "../assets/js/pizzas.js";
 import { useState } from "react";
 
